@@ -203,10 +203,9 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_3.png" 
-            alt="ASSUL Interior" 
+            src="/images/bar-assul.webp" 
+            alt="Bar da ASSUL - Associação Social do Ulmeiro" 
             className="w-full h-full object-cover brightness-50 scale-105"
-            referrerPolicy="no-referrer"
           />
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -263,10 +262,9 @@ export default function App() {
           </div>
           <div className="relative">
             <img 
-              src="https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_0.png" 
-              alt="Bar da ASSUL" 
+              src="/images/decoracao-cachecois.webp" 
+              alt="Decoração com cachecóis desportivos na ASSUL" 
               className="pill-image w-full aspect-[4/5]"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-8 -left-8 bg-brand-olive text-white p-8 rounded-[2rem] hidden lg:block shadow-xl">
               <p className="font-serif text-2xl italic">"Um copo de vinho e boa companhia."</p>
@@ -311,12 +309,11 @@ export default function App() {
           <SectionHeading title="O Nosso Espaço" subtitle="Galeria de Fotos" />
           <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
             {[
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_3.png", alt: "Balcão ASSUL", caption: "O nosso balcão icónico" },
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_2.png", alt: "Bilhar", caption: "Espaço de jogos" },
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_1.png", alt: "Sagres", caption: "Sempre fresca" },
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_0.png", alt: "Cachecóis", caption: "A nossa paixão pelo desporto" },
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_3.png", alt: "Convívio", caption: "Momentos entre amigos" },
-              { src: "https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_2.png", alt: "Lazer", caption: "O nosso espaço" },
+              { src: "/images/bar-assul.webp", alt: "Balcão da ASSUL com logótipo", caption: "O nosso balcão icónico" },
+              { src: "/images/bilhar.webp", alt: "Sala de bilhar da ASSUL", caption: "Espaço de jogos" },
+              { src: "/images/sagres.webp", alt: "Sagres Mini no balcão", caption: "Sempre fresca" },
+              { src: "/images/decoracao-cachecois.webp", alt: "Decoração com cachecóis desportivos", caption: "A nossa paixão pelo desporto" },
+              { src: "/images/parque-infantil.webp", alt: "Parque infantil exterior", caption: "Espaço para os mais novos" },
             ].map((img, i) => (
               <motion.div 
                 key={i}
@@ -329,7 +326,6 @@ export default function App() {
                   src={img.src} 
                   alt={img.alt} 
                   className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-brand-brown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                   <p className="text-white font-serif text-xl italic">{img.caption}</p>
@@ -345,10 +341,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <img 
-              src="https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_3.png" 
-              alt="Sócios ASSUL" 
+              src="/images/bilhar.webp" 
+              alt="Sala de convívio da ASSUL" 
               className="pill-image w-full aspect-square"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="order-1 lg:order-2">
@@ -387,7 +382,7 @@ export default function App() {
       {/* Booking / Rental Section */}
       <section id="booking" className="py-24 px-6 bg-brand-brown text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
-          <img src="https://storage.googleapis.com/static-content-ais/ais-dev-5ducsyh4edwfxkk45ki7u6-751575544274/input_file_0.png" alt="" className="w-full h-full object-cover" />
+          <img src="/images/sagres.webp" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16">
