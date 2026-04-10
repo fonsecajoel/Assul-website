@@ -50,15 +50,25 @@ const Navbar = () => {
 
   return (
     <nav className={cn(
-      "fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4",
-      scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent"
+      "fixed top-0 w-full z-50 transition-all duration-500 px-6",
+      scrolled 
+        ? "bg-white/70 backdrop-blur-2xl shadow-lg py-4 border-b border-white/30" 
+        : "bg-transparent py-6"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-brand-olive rounded-full flex items-center justify-center text-white font-serif text-xl font-bold group-hover:scale-110 transition-transform">
+        <a href="#home" className="flex items-center gap-3 group">
+          <div className={cn(
+            "w-11 h-11 rounded-full flex items-center justify-center font-serif text-xl font-bold transition-all duration-300",
+            scrolled 
+              ? "bg-brand-olive text-white shadow-sm group-hover:shadow-[0_0_15px_rgba(90,90,64,0.5)]" 
+              : "bg-white text-brand-olive shadow-sm group-hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+          )}>
             A
           </div>
-          <span className="font-serif text-2xl font-bold tracking-tight text-brand-brown">
+          <span className={cn(
+            "font-serif text-2xl font-bold tracking-tight transition-colors duration-300",
+            scrolled ? "text-brand-brown" : "text-white"
+          )}>
             ASSUL
           </span>
         </a>
@@ -69,21 +79,35 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium uppercase tracking-widest text-brand-brown/80 hover:text-brand-olive transition-colors"
+              className={cn(
+                "text-sm font-medium uppercase tracking-widest transition-colors nav-link-underline",
+                scrolled ? "text-brand-brown/80 hover:text-brand-olive" : "text-white/90 hover:text-white"
+              )}
             >
               {link.name}
             </a>
           ))}
           <a 
             href="#booking"
-            className="bg-brand-olive text-white px-6 py-2 rounded-full text-sm font-medium uppercase tracking-widest hover:bg-brand-brown transition-colors"
+            className={cn(
+              "px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-widest transition-all animate-pulse-glow",
+              scrolled 
+                ? "bg-brand-olive text-white hover:bg-brand-brown" 
+                : "bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-brand-olive shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+            )}
           >
             Reservar
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-brand-brown" onClick={() => setIsOpen(!isOpen)}>
+        <button 
+          className={cn(
+            "md:hidden transition-colors duration-300 relative z-50",
+            scrolled ? "text-brand-brown" : "text-white"
+          )} 
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -92,21 +116,46 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white shadow-xl py-8 flex flex-col items-center gap-6 md:hidden"
+            initial={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full left-0 w-full overflow-hidden md:hidden"
           >
-            {navLinks.map((link) => (
+            <div className={cn(
+              "flex flex-col items-center gap-6 py-10 px-6 border-t transition-colors duration-300",
+              scrolled 
+                ? "bg-white/90 backdrop-blur-3xl shadow-xl border-brand-brown/10" 
+                : "bg-black/40 backdrop-blur-3xl shadow-xl border-white/10"
+            )}>
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-serif tracking-widest uppercase transition-colors",
+                    scrolled 
+                      ? "text-brand-brown hover:text-brand-olive" 
+                      : "text-white/90 hover:text-white"
+                  )}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a 
-                key={link.name} 
-                href={link.href}
+                href="#booking"
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-serif text-brand-brown"
+                className={cn(
+                  "mt-4 px-8 py-3 rounded-full text-sm font-medium uppercase tracking-widest transition-all animate-pulse-glow",
+                  scrolled 
+                    ? "bg-brand-olive text-white hover:bg-brand-brown" 
+                    : "bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-brand-olive"
+                )}
               >
-                {link.name}
+                Reservar
               </a>
-            ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
