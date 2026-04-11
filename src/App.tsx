@@ -58,7 +58,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a href="#home" className="flex items-center gap-3 group">
           <img 
-            src="/logo-assul.jpg" 
+            src="/logo-assul.webp" 
             alt="Logótipo ASSUL" 
             className="w-11 h-11 rounded-full object-cover shadow-sm transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(90,90,64,0.5)]"
           />
@@ -647,7 +647,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
             <img 
-              src="/logo-assul.jpg" 
+              src="/logo-assul.webp" 
               alt="Logótipo ASSUL" 
               className="w-8 h-8 rounded-full object-cover"
             />
