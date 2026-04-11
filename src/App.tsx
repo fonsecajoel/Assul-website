@@ -57,14 +57,11 @@ const Navbar = () => {
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a href="#home" className="flex items-center gap-3 group">
-          <div className={cn(
-            "w-11 h-11 rounded-full flex items-center justify-center font-serif text-xl font-bold transition-all duration-300",
-            scrolled 
-              ? "bg-brand-olive text-white shadow-sm group-hover:shadow-[0_0_15px_rgba(90,90,64,0.5)]" 
-              : "bg-white text-brand-olive shadow-sm group-hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-          )}>
-            A
-          </div>
+          <img 
+            src="/logo-assul.jpg" 
+            alt="Logótipo ASSUL" 
+            className="w-11 h-11 rounded-full object-cover shadow-sm transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(90,90,64,0.5)]"
+          />
           <span className={cn(
             "font-serif text-2xl font-bold tracking-tight transition-colors duration-300",
             scrolled ? "text-brand-brown" : "text-white"
@@ -649,9 +646,11 @@ export default function App() {
       <footer className="bg-brand-cream py-12 px-6 border-t border-brand-brown/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-olive rounded-full flex items-center justify-center text-white font-serif text-sm font-bold">
-              A
-            </div>
+            <img 
+              src="/logo-assul.jpg" 
+              alt="Logótipo ASSUL" 
+              className="w-8 h-8 rounded-full object-cover"
+            />
             <span className="font-serif text-xl font-bold text-brand-brown">ASSUL</span>
           </div>
           <p className="text-brand-brown/50 text-sm">
